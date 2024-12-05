@@ -155,6 +155,17 @@ def Layout(children=[]):
                             ):
                                 with rv.ListItem(link=True) as classes_item:
                                     with rv.ListItemIcon():
+                                        rv.Icon(children=["mdi-chart-bubble"])
+
+                                    rv.ListItemTitle(children=["Educator Dashboard"])
+
+                                solara.v.use_event(
+                                    classes_item,
+                                    "click",
+                                    lambda *args: router.push("/educator-dashboard"),
+                                )
+                                with rv.ListItem(link=True) as classes_item:
+                                    with rv.ListItemIcon():
                                         rv.Icon(children=["mdi-book"])
 
                                     rv.ListItemTitle(children=["Manage Classes"])
